@@ -11,3 +11,11 @@ class LoginPageLocators():
     REGISTER_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
     REGISTER_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
     REGISTER_PASSWORD_CONFIRMATION = (By.CSS_SELECTOR, "#id_registration-password2")
+
+
+class ProductPageLocators():
+    ADD_TO_CART_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    BOOK_NAME = (By.XPATH, "//h1")
+    MESSAGE_BOOK_NAME = (By.CSS_SELECTOR, "#messages .alert-success:nth-child(1) strong")
+    BOOK_PRICE = (By.CSS_SELECTOR, ".content .price_color")
+    MESSAGE_BOOK_PRICE = (By.CSS_SELECTOR, "#messages .alert:nth-child(3) strong")
