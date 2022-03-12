@@ -18,6 +18,11 @@ class LoginPage(BasePage):
     def should_be_register_form(self):
         assert self.is_element_present(*LoginPageLocators.REGISTER_EMAIL), "Can't find Register Email text field"
         assert self.is_element_present(*LoginPageLocators.REGISTER_PASSWORD), "Can't find Register Password text field"
-        assert self.is_element_present(*LoginPageLocators.REGISTER_PASSWORD_CONFIRMATION), \
-            "Can't find Register Password Confirmation text field"
+        assert self.is_element_present(*LoginPageLocators.REGISTER_PASSWORD_CONFIRMATION), "Can't find Register Password Confirmation text field"
+
+    def register_new_user(self,email,password):
+        self.get_page_element(*LoginPageLocators.REGISTER_EMAIL).send_keys(email)
+        self.get_page_element(*LoginPageLocators.REGISTER_PASSWORD).send_keys(password)
+        self.get_page_element(*LoginPageLocators.REGISTER_PASSWORD_CONFIRMATION).send_keys(password)
+        self.get_page_element(*LoginPageLocators.REGISTER_BUTTON).click()
 
