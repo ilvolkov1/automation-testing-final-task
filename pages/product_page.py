@@ -10,10 +10,14 @@ class ProductPage(BasePage):
 
     def check_if_name_is_correct(self):
         assert self.get_page_element(*ProductPageLocators.BOOK_NAME).text == self.get_page_element(*ProductPageLocators.MESSAGE_BOOK_NAME).text, "Book names are not the same"
-        #print(self.get_page_element(*ProductPageLocators.BOOK_NAME).text)
-        #print(self.get_page_element(*ProductPageLocators.MESSAGE_BOOK_NAME).text)
+
 
     def check_if_price_is_correct(self):
         assert self.get_page_element(*ProductPageLocators.BOOK_PRICE).text== self.get_page_element(*ProductPageLocators.MESSAGE_BOOK_PRICE).text, "Book prices are not the same"
-        #print(self.get_page_element(*ProductPageLocators.BOOK_PRICE).text)
-        #print(self.get_page_element(*ProductPageLocators.MESSAGE_BOOK_PRICE).text)
+
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should not be"
+
+    def should_disappear_message(self):
+        assert self.is_disappeared(*ProductPageLocators.SUCCESS_MESSAGE), "Success message is presented, but should be disappeared"
